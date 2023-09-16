@@ -39,11 +39,19 @@ int _printf(const char *format, ...) {
                 case 'd':
                 case 'i':
                 {
+                char digit;
                 int num = va_arg(args, int);
-                printf("%d", num);
+                if (num < 0)
+                {
+                    putchar('-');
+                    char_count++;
+                    num = -num;
+                }
+                digit = num % 10 + '0';
+                putchar(digit);
                 char_count++;
                 break;
-                }
+            }
                 default:
                     break;
             }
