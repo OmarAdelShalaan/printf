@@ -1,17 +1,12 @@
 #include "main.h"
 
 /**
- * main - test case
-*/
-
-int main()
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
 {
-    int i = 17;
-    int m = 9;
-    char cc = 'x';
-    char *str = "hello there this is my string";
-    int returntype;
-
-    returntype = _printf("Hello, today is %d, of m %d, %%, try char: %c. \n, string = %s, binary = %b", i, m, cc, str, 98);
-    return (returntype);
+    _printf("%b\n", 98);
+    return (0);
 }
