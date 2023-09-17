@@ -1,11 +1,13 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef PRINT_F
+#define PRINT_F
 
-#include <stdio.h>
-#include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
-int _putchar(char c);
+
 int _printf(const char *format, ...);
+int _putchar(char);
 
-#endif /* MAIN_H */
+
+#endif

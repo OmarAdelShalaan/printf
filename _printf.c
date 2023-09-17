@@ -39,19 +39,40 @@ int _printf(const char *format, ...) {
                 case 'd':
                 case 'i':
                 {
-                char digit;
+                char digits[12];  
                 int num = va_arg(args, int);
+                int is_negative = 0;
+                int digit_count = 0, i;
+
                 if (num < 0)
-                {
-                    putchar('-');
-                    char_count++;
-                    num = -num;
-                }
-                digit = num % 10 + '0';
-                putchar(digit);
-                char_count++;
-                break;
-            }
+    {
+        is_negative = 1;
+        num = -num;
+    }
+
+
+    do
+    {
+        digits[digit_count++] = (char)(num % 10 + '0');
+        num /= 10;
+    } while (num > 0);
+
+
+    if (is_negative)
+    {
+        _putchar('-');
+        char_count++;
+    }
+
+    for (i = digit_count - 1; i >= 0; i--)
+    {
+        _putchar(digits[i]);
+        char_count++;
+    }
+
+    break;
+}
+
                 default:
                     break;
             }
