@@ -18,6 +18,7 @@ struct convert
 };
 typedef struct convert conver_t;
 
+#define BUFFER_SIZE 1024
 
 int filter_function(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
