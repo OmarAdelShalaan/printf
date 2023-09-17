@@ -1,16 +1,33 @@
+#include <stdio.h>
 #include "main.h"
 
-/**
- * main - test case
-*/
-
-int main()
+int main(void)
 {
+    int printed_chars;
 
-    char *str = "hello there this is my string";
-    int i = 1;
+    printed_chars = _printf("Hello, world!\n");
+    printf("Return Value: %d\n", printed_chars);
 
-    _printf("String: %s\nInteger: %i", str, i);
+    printed_chars = _printf("Character: %c\n", 'A');
+    printf("Return Value: %d\n", printed_chars);
+
+    printed_chars = _printf("String: %s\n", "Printf");
+    printf("Return Value: %d\n", printed_chars);
+
+    printed_chars = _printf("Decimal: %d\n", 12345);
+    printf("Return Value: %d\n", printed_chars);
+
+    printed_chars = _printf("Binary: %b\n", 255);
+    printf("Return Value: %d\n", printed_chars);
+
+    printed_chars = _printf("Hexadecimal: %x\n", 255);
+    printf("Return Value: %d\n", printed_chars);
+
+    printed_chars = _printf("Percentage: %%\n");
+    printf("Return Value: %d\n", printed_chars);
+
+    printed_chars = _printf("Invalid Format: %z\n");
+    printf("Return Value: %d\n", printed_chars);
+
     return (0);
-    
 }
