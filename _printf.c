@@ -15,7 +15,8 @@ va_list arg_list;
 conver_t formspec_list[] = {
 {"c", print_char}, {"s", print_string}, {"%", print_percent},
 {"d", print_integer}, {"i", print_integer}, {"b", print_binary},
-{"u", unsigned_integer}, {NULL, NULL}
+{"u", unsigned_integer}, {"o", print_o}, {"x", print_x},
+{"X", print_X}, {"p", print_pointer}, {NULL, NULL}
 };
 
 if (format == NULL)

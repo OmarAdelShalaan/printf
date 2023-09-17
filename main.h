@@ -39,5 +39,6 @@ int print_binary(va_list);
 int print_o(va_list list);
 int print_x(va_list list);
 int print_X(va_list list);
+int print_pointer(va_list list);
 
 #endif
