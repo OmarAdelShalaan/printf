@@ -13,12 +13,13 @@ int printed_chars;
 va_list arg_list;
 
 conver_t formspec_list[] = {
-{"c", print_char}, {"s", print_string}, {"%", print_percent}, 
-{"d", print_integer}, {"i", print_integer}, {"b", print_binary}, 
+{"c", print_char}, {"s", print_string}, {"%", print_percent},
+{"d", print_integer}, {"i", print_integer}, {"b", print_binary},
 {"u", unsigned_integer}, {NULL, NULL}
 };
 
-if (format == NULL) return (-1);
+if (format == NULL)
+return (-1);
 
 va_start(arg_list, format);
 
