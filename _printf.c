@@ -29,12 +29,7 @@ int _printf(const char *format, ...)
                 case 's':
                 {
                     char *str = va_arg(args, char *);
-                    while (*str)
-                    {
-                        _putchar(*str);
-                        str++;
-                        char_count++;
-                    }
+                    print_str(str);
                     break;
                 }
                 case '%':
@@ -55,7 +50,9 @@ int _printf(const char *format, ...)
                     char_count++;
                 break;
                 }
-                case 'b': {
+                }
+                case 'b':
+                {
                         unsigned int num = va_arg(args, unsigned int);
                         print_binary(num);
                         break;
@@ -63,9 +60,9 @@ int _printf(const char *format, ...)
 
                 default:
                     break;
+                
             }
         }
-
          else
          {
             _putchar(*format);

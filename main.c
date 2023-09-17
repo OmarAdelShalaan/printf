@@ -1,12 +1,16 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
+ * main - test case
+*/
+
+int main()
 {
-    _printf("%b\n", 98);
+
+    char *str = "hello there this is my string";
+    int i = 1;
+
+    _printf("String: %s\nInteger: %i", str, i);
     return (0);
+    
 }
