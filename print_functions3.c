@@ -35,7 +35,10 @@ int print_o(va_list list)
     rev_str = rev_string(octal_rep);
 
     if (rev_str == NULL)
+    {
+        free(octal_rep);
         return (-1);
+    }
 
     write_base(rev_str);
     free(octal_rep);
@@ -86,7 +89,10 @@ int print_x(va_list list)
     rev_hex = rev_string(hex_rep);
 
     if (rev_hex == NULL)
+    {
+        free(hex_rep);
         return (-1);
+    }
 
     write_base(rev_hex);
     free(hex_rep);
@@ -102,7 +108,7 @@ int print_x(va_list list)
  */
 int print_X(va_list list)
 {
-    unsigned int num;
+unsigned int num;
     int len, rem_num;
     char *hex_rep, *rev_hex;
 
@@ -137,7 +143,10 @@ int print_X(va_list list)
     rev_hex = rev_string(hex_rep);
 
     if (rev_hex == NULL)
+    {
+        free(hex_rep);
         return (-1);
+    }
 
     write_base(rev_hex);
     free(hex_rep);

@@ -21,6 +21,10 @@ typedef struct convert conver_t;
 
 int filter_function(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
+int base_len(unsigned int num, int base);
+int hex_check(int num, char x);
+char *rev_string(const char *str);
+void write_base(char *str);
 int _putchar(char);
 void _puts(char *str);
 int print_integer(va_list);
