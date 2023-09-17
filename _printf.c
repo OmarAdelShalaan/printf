@@ -77,22 +77,12 @@ int _printf(const char *format, ...) {
                         print_binary(num);
                         break;
                 }
-                case 'n': {
-                    _putchar('\n');
-                    break;
-                }
 
                 default:
                     break;
             }
         }
-         
-        else if (*format == '\\') {
-            char *c;
-            c = "n";
-            format++;
-            if (*format == *c)
-            _putchar('\n'); }
+
          else
          {
             _putchar(*format);
