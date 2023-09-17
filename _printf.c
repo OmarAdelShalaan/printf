@@ -45,38 +45,56 @@ int _printf(const char *format, ...) {
                 int digit_count = 0, i;
 
                 if (num < 0)
-    {
-        is_negative = 1;
-        num = -num;
-    }
+                {
+                   is_negative = 1;
+                     num = -num;
+                }
 
 
-    do
-    {
-        digits[digit_count++] = (char)(num % 10 + '0');
-        num /= 10;
-    } while (num > 0);
+                do
+                 {
+                digits[digit_count++] = (char)(num % 10 + '0');
+                   num /= 10;
+                 }    while (num > 0);
 
 
-    if (is_negative)
-    {
-        _putchar('-');
-        char_count++;
-    }
+                if (is_negative)
+                {
+                    _putchar('-');
+                    char_count++;
+                }
 
-    for (i = digit_count - 1; i >= 0; i--)
-    {
-        _putchar(digits[i]);
-        char_count++;
-    }
+                for (i = digit_count - 1; i >= 0; i--)
+                {
+                    _putchar(digits[i]);
+                    char_count++;
+                }
 
-    break;
-}
+                break;
+                }
+                case 'b': {
+                        unsigned int num = va_arg(args, unsigned int);
+                        print_binary(num);
+                        break;
+                }
+                case 'n': {
+                    _putchar('\n');
+                    break;
+                }
 
                 default:
                     break;
             }
-        } else {
+        }
+         
+        else if (*format == '\\') {
+            char *c;
+            c = "n";
+            format++;
+            if (*format == *c)
+            _putchar('\n'); }
+         else
+         {
             _putchar(*format);
             char_count++;
         }
