@@ -46,36 +46,13 @@ int _printf(const char *format, ...)
                 case 'd':
                 case 'i':
                 {
-                char digits[12];  
                 int num = va_arg(args, int);
-                int is_negative = 0;
-                int digit_count = 0, i;
-
-                if (num < 0)
+                char *formatted = format_integer(num);
+                while (*formatted)
                 {
-                   is_negative = 1;
-                     num = -num;
-                }
-
-                do
-                 {
-                digits[digit_count++] = (char)(num % 10 + '0');
-                   num /= 10;
-                 }    while (num > 0);
-
-
-                if (is_negative)
-                {
-                    _putchar('-');
+                    _putchar(*formatted);
+                    formatted++;
                     char_count++;
-                }
-
-                for (i = digit_count - 1; i >= 0; i--)
-                {
-                    _putchar(digits[i]);
-                    char_count++;
-                }
-
                 break;
                 }
                 case 'b': {
