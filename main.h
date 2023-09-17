@@ -31,7 +31,8 @@ int print_number(va_list);
 int unsigned_integer(va_list);
 int print_unsigned_number(unsigned int);
 int print_binary(va_list);
-
-
+int print_o(va_list list);
+int print_x(va_list list);
+int print_X(va_list list);
 
 #endif
